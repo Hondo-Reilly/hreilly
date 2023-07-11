@@ -1,0 +1,12 @@
+#se-button {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  padding: 2rem;
+}
+#se-button .label {
+  font-size: 2rem;
+  filter: url(#noise);
+}
+/*# sourceMappingURL=StaticEffectButton.css.map */

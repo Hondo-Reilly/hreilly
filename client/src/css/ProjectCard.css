@@ -1,0 +1,41 @@
+.project-card {
+  border-radius: 0.5rem;
+  background-color: #3d3d3d;
+  overflow: hidden;
+}
+.project-card .project-card--main-image {
+  object-fit: contain;
+  background-color: white;
+}
+.project-card .project-card--content {
+  padding: 2rem;
+}
+.project-card .project-card--title {
+  color: white;
+  padding-bottom: 0.25rem;
+}
+.project-card .project-card--job-position {
+  color: white;
+}
+.project-card .project-card--tools {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.project-card .project-card--tool-item {
+  border-radius: 9999px;
+  background-color: orangered;
+  padding: 0.25rem 0.75rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.project-card .project-card--tool-item .project-card--icon {
+  color: white;
+}
+.project-card .project-card--tool-item p {
+  color: white;
+}
+/*# sourceMappingURL=ProjectCard.css.map */

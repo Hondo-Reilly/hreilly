@@ -1,0 +1,75 @@
+:root {
+  font-size: 16px;
+  font-family: Arial, serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+p.white,
+h1.white,
+h2.white,
+h3.white,
+h4.white,
+h5.white,
+h6.white {
+  color: white;
+}
+button {
+  all: unset;
+  font-family: Arial, serif;
+}
+img {
+  width: 100%;
+}
+#hero {
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  background-color: white;
+}
+#hero .ocean {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#hero #down-arrow {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  translate: -50% 0;
+  font-size: 2rem;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: infinite arrow-float 1.5s ease-in-out alternate;
+}
+#hero #down-arrow #svg-arrow {
+  color: white;
+  mix-blend-mode: lighten;
+}
+@keyframes arrow-float {
+  0% {
+    translate: -50% -5px;
+  }
+  100% {
+    translate: -50% 5px;
+  }
+}
+/*# sourceMappingURL=Home.css.map */
