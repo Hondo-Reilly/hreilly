@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../css/ProjectCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,20 +12,108 @@ import {
   faUnity,
 } from "@fortawesome/free-brands-svg-icons";
 import { faCode, faDatabase } from "@fortawesome/free-solid-svg-icons";
-export function ProjectCard({ toolsUsed, title, mainImage, jobPosition }) {
+
+export function ProjectCard({
+  toolsUsed,
+  title,
+  mainImage,
+  jobPosition,
+  imageLink,
+}) {
+  const [rotateValues, setRotateValues] = useState([0, 0]);
+  const [percentValues, setPercentValues] = useState("");
+  const projectCardRef = useRef();
+
+  const targetRotation = useRef([0, 0]);
+  const rotationSpeedCurve = useRef([0, 2]);
+  const rotateInterval = useRef(0);
+
+  function handleMouseOver(event) {
+    const width = projectCardRef.current.offsetWidth;
+    const height = projectCardRef.current.offsetHeight;
+    const bounds = projectCardRef.current.getBoundingClientRect();
+
+    const relativeCenterX = event.clientX - bounds.left - width / 2;
+    const relativeCenterY = event.clientY - bounds.top - height / 2;
+
+    const offsetCenterXPercent = relativeCenterX / (width / 2);
+    const offsetCenterYPercent = relativeCenterY / (height / 2);
+
+    //setRotateValues([offsetCenterXPercent * 10, offsetCenterYPercent * -10]);
+
+    handleRotateLoop(rotateValues, [
+      offsetCenterXPercent * 15,
+      offsetCenterYPercent * -15,
+    ]);
+  }
+
+  function onMouseLeave(event) {
+    handleRotateLoop(rotateValues, [0, 0]);
+  }
+
+  function handleRotateLoop(currentRotation = [0, 0], target = [0, 0]) {
+    let [currentX, currentY] = currentRotation;
+    targetRotation.current = target;
+
+    function lerp(start, end, amt) {
+      return (1 - amt) * start + amt * end;
+    }
+
+    if (rotateInterval.current === undefined || rotateInterval.current === 0) {
+      rotateInterval.current = setInterval(() => {
+        let [targetX, targetY] = targetRotation.current;
+
+        let deltaX = targetX - currentX;
+        let deltaY = targetY - currentY;
+        let magnitude = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+
+        let changeX =
+          (deltaX / magnitude) * Math.min(rotationSpeed.current, magnitude) ||
+          0;
+        let changeY =
+          (deltaY / magnitude) * Math.min(rotationSpeed.current, magnitude) ||
+          0;
+
+        currentX += changeX;
+        currentY += changeY;
+
+        setRotateValues([currentX, currentY]);
+
+        if (changeX === 0 && changeY === 0) {
+          clearInterval(rotateInterval.current);
+          rotateInterval.current = undefined;
+        }
+      }, 10);
+    }
+  }
+
   return (
-    <div className="project-card">
-      <img src={mainImage} alt="" className="project-card--main-image" />
+    <div
+      className="project-card"
+      ref={projectCardRef}
+      onMouseMove={handleMouseOver}
+      onMouseLeave={onMouseLeave}
+    >
+      <div
+        className="project-card--rotation-wrapper"
+        style={{
+          transform: `perspective(800px) rotateX(${rotateValues[1]}deg) rotateY(${rotateValues[0]}deg)`,
+        }}
+      >
+        <a href={imageLink} target="_blank">
+          <img src={mainImage} alt="" className="project-card--main-image" />
+        </a>
 
-      <div className="project-card--content">
-        <div className="project-card--tools">
-          {toolsUsed.map((tool) => (
-            <ToolItem toolType={tool} />
-          ))}
+        <div className="project-card--content">
+          <div className="project-card--tools">
+            {toolsUsed.map((tool) => (
+              <ToolItem toolType={tool} />
+            ))}
+          </div>
+
+          <h2 className="project-card--title">{title}</h2>
+          <p className="project-card--job-position">{jobPosition}</p>
         </div>
-
-        <h2 className="project-card--title">{title}</h2>
-        <p className="project-card--job-position">{jobPosition}</p>
       </div>
     </div>
   );

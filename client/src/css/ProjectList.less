@@ -5,10 +5,47 @@
 
   padding: 2rem;
 
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
   .project-list--list {
     display: flex;
     flex-flow: column;
     align-items: center;
     gap: 2rem;
+  }
+
+  .project-list--content-wrapper {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 1100px) {
+  #project-list {
+    h1 {
+      padding-bottom: 2rem;
+      text-align: left;
+    }
+
+    .project-list--list {
+      display: grid;
+      grid-template-columns: 500px 500px;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 2rem;
+
+      width: fit-content;
+    }
+
+    .project-list--content-wrapper {
+      width: fit-content;
+      max-width: 2000px;
+    }
   }
 }
