@@ -8,6 +8,10 @@
   padding-bottom: 2px;
   transition: scale 50ms;
 
+  .hsbutton--label {
+    font-size: 1.5rem;
+  }
+
   &.large {
     .hsbutton--label {
       font-size: 2rem;
@@ -18,10 +22,6 @@
     .hsbutton--label {
       font-size: 2.5rem;
     }
-  }
-
-  .hsbutton--label {
-    font-size: 1.5rem;
   }
 
   .hsbutton--highlight {
@@ -99,5 +99,29 @@
 
   100% {
     width: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hsbutton {
+    .hsbutton--label {
+      font-size: 2rem;
+    }
+
+    &.large {
+      .hsbutton--label {
+        font-size: 2.25rem;
+      }
+    }
+
+    &.x-large {
+      .hsbutton--label {
+        font-size: 2.75rem;
+      }
+    }
+
+    .hsbutton--highlight {
+      height: 3px;
+    }
   }
 }

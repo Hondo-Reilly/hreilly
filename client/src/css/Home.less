@@ -38,6 +38,15 @@
       mix-blend-mode: lighten;
     }
   }
+
+  #intro-content {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: 50%;
+    translate: -50% -50%;
+
+    animation: 1500ms intro-slide-in 1 ease-out 1s;
+  }
 }
 
 @keyframes arrow-float {
@@ -47,5 +56,15 @@
 
   100% {
     translate: -50% 5px;
+  }
+}
+
+@keyframes intro-slide-in {
+  0% {
+    top: calc(110%);
+  }
+
+  100% {
+    top: calc(50% - 100px);
   }
 }

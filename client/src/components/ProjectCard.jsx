@@ -21,11 +21,12 @@ export function ProjectCard({
   imageLink,
 }) {
   const [rotateValues, setRotateValues] = useState([0, 0]);
-  const [percentValues, setPercentValues] = useState("");
+
+  const mobileTouch = useRef(false);
+
   const projectCardRef = useRef();
 
   const targetRotation = useRef([0, 0]);
-  const rotationSpeedCurve = useRef([0, 2]);
   const rotateInterval = useRef(0);
 
   function handleMouseOver(event) {
@@ -40,11 +41,12 @@ export function ProjectCard({
     const offsetCenterYPercent = relativeCenterY / (height / 2);
 
     //setRotateValues([offsetCenterXPercent * 10, offsetCenterYPercent * -10]);
-
-    handleRotateLoop(rotateValues, [
-      offsetCenterXPercent * 15,
-      offsetCenterYPercent * -15,
-    ]);
+    if (!mobileTouch.current) {
+      handleRotateLoop(rotateValues, [
+        offsetCenterXPercent * 15,
+        offsetCenterYPercent * -15,
+      ]);
+    }
   }
 
   function onMouseLeave(event) {
@@ -59,10 +61,28 @@ export function ProjectCard({
       return (1 - amt) * start + amt * end;
     }
 
+    function betweenVariance(val, comp, vari) {
+      return val <= comp + vari && val >= comp - vari;
+    }
+
     if (rotateInterval.current === undefined || rotateInterval.current === 0) {
       rotateInterval.current = setInterval(() => {
         let [targetX, targetY] = targetRotation.current;
 
+        currentX = lerp(currentX, targetX, 0.1);
+        currentY = lerp(currentY, targetY, 0.1);
+
+        setRotateValues([currentX, currentY]);
+
+        if (
+          betweenVariance(currentX, targetX, 0.1) &&
+          betweenVariance(currentY, targetY, 0.1)
+        ) {
+          setRotateValues(targetRotation.current);
+          clearInterval(rotateInterval.current);
+          rotateInterval.current = undefined;
+        }
+        /*
         let deltaX = targetX - currentX;
         let deltaY = targetY - currentY;
         let magnitude = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
@@ -79,10 +99,12 @@ export function ProjectCard({
 
         setRotateValues([currentX, currentY]);
 
+
         if (changeX === 0 && changeY === 0) {
           clearInterval(rotateInterval.current);
           rotateInterval.current = undefined;
         }
+        */
       }, 10);
     }
   }
@@ -93,6 +115,10 @@ export function ProjectCard({
       ref={projectCardRef}
       onMouseMove={handleMouseOver}
       onMouseLeave={onMouseLeave}
+      onTouchStart={() => {
+        mobileTouch.current = true;
+        setRotateValues([0, 0]);
+      }}
     >
       <div
         className="project-card--rotation-wrapper"
@@ -105,14 +131,16 @@ export function ProjectCard({
         </a>
 
         <div className="project-card--content">
+          <div className="project-card--text-content">
+            <h2 className="project-card--title">{title}</h2>
+            <p className="project-card--job-position">{jobPosition}</p>
+          </div>
+
           <div className="project-card--tools">
             {toolsUsed.map((tool) => (
               <ToolItem toolType={tool} />
             ))}
           </div>
-
-          <h2 className="project-card--title">{title}</h2>
-          <p className="project-card--job-position">{jobPosition}</p>
         </div>
       </div>
     </div>

@@ -16,6 +16,10 @@ function Home() {
         <HSButton size="large">Projects</HSButton>
         <HSButton size="large">Contact</HSButton>
 
+        <div id="intro-content">
+          <h1>Howdy, I'm Hondo</h1>
+        </div>
+
         <Ocean />
 
         <button id="down-arrow">
