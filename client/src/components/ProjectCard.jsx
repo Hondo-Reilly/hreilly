@@ -11,7 +11,7 @@ import {
   faSquareJs,
   faUnity,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCode, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faDatabase, faLink } from "@fortawesome/free-solid-svg-icons";
 
 export function ProjectCard({
   toolsUsed,
@@ -19,6 +19,7 @@ export function ProjectCard({
   mainImage,
   jobPosition,
   imageLink,
+  jobDuration,
 }) {
   const [rotateValues, setRotateValues] = useState([0, 0]);
 
@@ -126,14 +127,22 @@ export function ProjectCard({
           transform: `perspective(800px) rotateX(${rotateValues[1]}deg) rotateY(${rotateValues[0]}deg)`,
         }}
       >
-        <a href={imageLink} target="_blank">
+        <div className="project-card--main-image-wrapper">
           <img src={mainImage} alt="" className="project-card--main-image" />
-        </a>
+          <a
+            href={imageLink}
+            target="_blank"
+            className="project-card--open-link"
+          >
+            <FontAwesomeIcon icon={faLink} />
+          </a>
+        </div>
 
         <div className="project-card--content">
           <div className="project-card--text-content">
             <h2 className="project-card--title">{title}</h2>
             <p className="project-card--job-position">{jobPosition}</p>
+            <p className="project-card--job-duration">{jobDuration}</p>
           </div>
 
           <div className="project-card--tools">

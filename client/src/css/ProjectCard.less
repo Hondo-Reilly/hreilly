@@ -18,6 +18,11 @@
     flex-flow: column;
   }
 
+  .project-card--main-image-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
   .project-card--main-image {
     object-fit: contain;
     background-color: white;
@@ -41,8 +46,10 @@
     padding-bottom: 0.25rem;
   }
 
-  .project-card--job-position {
+  .project-card--job-duration, .project-card--job-position {
     color: white;
+    line-height: 1.5;
+    font-size: 1.25rem;
   }
 
   .project-card--tools {
@@ -80,6 +87,28 @@
     p {
       color: white;
     }
+  }
+
+  .project-card--open-link {
+    all: unset;
+
+    border-radius: 9999px;
+    background-color: white;
+
+    width: 32px;
+    aspect-ratio: 1 / 1;
+
+    position: absolute;
+    left: 0.5rem;
+    bottom: calc(0.5rem + 7px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+
+    cursor: pointer;
   }
 }
 

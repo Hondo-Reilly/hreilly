@@ -8,16 +8,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import wave from "./assets/RedWave-01.png";
 import StaticEffectButton from "./components/StaticEffectButton.jsx";
+import { About } from "./components/About.jsx";
 function Home() {
+  function handleOnProjectsClick() {
+    const element = document.getElementById("project-list-scroll-snap");
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <>
       <div id="hero">
-        <HSButton size="large">About</HSButton>
-        <HSButton size="large">Projects</HSButton>
-        <HSButton size="large">Contact</HSButton>
+        <div id="intro-nav">
+          <h1>Hondo Reilly</h1>
+          <h2>Designer and Developer</h2>
 
-        <div id="intro-content">
-          <h1>Howdy, I'm Hondo</h1>
+          <HSButton size="large">About</HSButton>
+          <HSButton size="large" onClick={handleOnProjectsClick}>
+            Projects
+          </HSButton>
+          <HSButton size="large">Contact</HSButton>
         </div>
 
         <Ocean />
@@ -26,6 +35,8 @@ function Home() {
           <FontAwesomeIcon icon={faArrowDown} id="svg-arrow" />
         </button>
       </div>
+
+      <About />
 
       <ProjectList />
 

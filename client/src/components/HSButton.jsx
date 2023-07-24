@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../css/HSButton.css";
 
-function HSButton({ size, children }) {
+function HSButton({ size, children, onClick }) {
   //highlight slide button
 
   const [runClickAnimation, setRunClickAnimation] = useState(false);
 
   function handleOnClick() {
+    onClick();
+
     setRunClickAnimation(true);
 
     setTimeout(() => {
