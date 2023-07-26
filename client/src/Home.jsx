@@ -15,6 +15,10 @@ function Home() {
     element.scrollIntoView({ behavior: "smooth" });
   }
 
+  function handleOnAboutClick(){
+    const element = document.getElementById("about-me");
+    element.scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <>
       <div id="hero">
@@ -22,7 +26,7 @@ function Home() {
           <h1>Hondo Reilly</h1>
           <h2>Designer and Developer</h2>
 
-          <HSButton size="large">About</HSButton>
+          <HSButton size="large" onClick={handleOnAboutClick}>About</HSButton>
           <HSButton size="large" onClick={handleOnProjectsClick}>
             Projects
           </HSButton>
@@ -39,8 +43,6 @@ function Home() {
       <About />
 
       <ProjectList />
-
-      <StaticEffectButton></StaticEffectButton>
     </>
   );
 }

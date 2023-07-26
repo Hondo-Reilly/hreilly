@@ -3,7 +3,6 @@ import "../css/HSButton.css";
 
 function HSButton({ size, children, onClick }) {
   //highlight slide button
-
   const [runClickAnimation, setRunClickAnimation] = useState(false);
 
   function handleOnClick() {
@@ -24,12 +23,7 @@ function HSButton({ size, children, onClick }) {
       onClick={handleOnClick}
     >
       <p className="hsbutton--label">{children}</p>
-      <div className="hsbutton--highlight">
-        <div className="hsbutton--sub-highlight"></div>
-        <div className="hsbutton--sub-highlight"></div>
-        <div className="hsbutton--sub-highlight"></div>
-        <div className="hsbutton--sub-highlight"></div>
-      </div>
+      <div className="hsbutton--highlight"></div>
     </button>
   );
 }
