@@ -5,6 +5,7 @@
   align-items: start;
   padding-bottom: 2px;
   transition: scale 50ms;
+  cursor: pointer;
 }
 .hsbutton .hsbutton--label {
   font-size: 1.5rem;

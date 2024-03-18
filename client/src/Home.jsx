@@ -19,6 +19,11 @@ function Home() {
     const element = document.getElementById("about-me");
     element.scrollIntoView({ behavior: "smooth" });
   }
+
+  function handleOnContactClick(){
+    window.open("https://www.linkedin.com/in/hondo-reilly-172b17212/","_blank", "noreferrer")
+  }
+
   return (
     <>
       <div id="hero">
@@ -26,16 +31,22 @@ function Home() {
           <h1>Hondo Reilly</h1>
           <h2>Designer and Developer</h2>
 
-          <HSButton size="large" onClick={handleOnAboutClick}>About</HSButton>
+          <HSButton size="large" onClick={handleOnAboutClick}>
+            About
+          </HSButton>
+
           <HSButton size="large" onClick={handleOnProjectsClick}>
             Projects
           </HSButton>
-          <HSButton size="large">Contact</HSButton>
+
+          <HSButton size="large" onClick={handleOnContactClick}>
+            Contact
+          </HSButton>
         </div>
 
         <Ocean />
 
-        <button id="down-arrow">
+        <button id="down-arrow" onClick={handleOnAboutClick}>
           <FontAwesomeIcon icon={faArrowDown} id="svg-arrow" />
         </button>
       </div>

@@ -10,10 +10,10 @@ export function About() {
         <div className="about-me--content-card">
           <div className="about-me--content-card-content-wrapper">
             <h3>
-              Howdy, <br className="about-me--name-break" /> Im Hondo Reilly
+              Howdy, <br className="about-me--name-break" /> I'm Hondo Reilly
             </h3>
             <p>
-              I'm a design and developer from Austin, TX. Currently I'm studying
+              I'm a web designer and developer from Austin, TX with 7 years of experience. I'm currently studying
               Engineering at Texas A&M.
             </p>
           </div>

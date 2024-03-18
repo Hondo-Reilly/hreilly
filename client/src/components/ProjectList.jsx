@@ -22,25 +22,25 @@ function ProjectList() {
               toolsUsed={["react", "html", "css", "js", "mongodb", "aws"]}
               title="SnapOrder"
               mainImage={SnapOrderImage}
-              jobPosition="Main Developer"
+              jobPosition="Full-Stack Developer"
               imageLink="https://snaporder.com"
-              jobDuration="June 2022 - August 2023"
+              jobDuration="January 2022 - August 2023"
             />
 
             <ProjectCard
               toolsUsed={["html", "css", "js", "php"]}
               title="NameDibs"
               mainImage={NameDibsImage}
-              jobPosition="Developer and Designer"
+              jobPosition="Front-End Developer"
               imageLink="https://namedibs.com/"
-              jobDuration="June 2022 - August 2023"
+              jobDuration="June 2022 - December 2023"
             />
 
             <ProjectCard
               toolsUsed={["html", "css", "js", "unity"]}
               title="Mod Tech Labs"
               mainImage={ModTechLabsImage}
-              jobPosition="Internship"
+              jobPosition="QA & UI Design Intern"
               imageLink="https://modtechlabs.com/"
               jobDuration="June 2022 - August 2023"
             />
