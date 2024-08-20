@@ -9,6 +9,7 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import wave from "./assets/RedWave-01.png";
 import StaticEffectButton from "./components/StaticEffectButton.jsx";
 import { About } from "./components/About.jsx";
+import {Hero} from "./components/Hero.jsx";
 function Home() {
   function handleOnProjectsClick() {
     const element = document.getElementById("project-list-scroll-snap");
@@ -26,6 +27,7 @@ function Home() {
 
   return (
     <>
+      <Hero/>
       <div id="hero">
         <div id="intro-nav">
           <h1>Hondo Reilly</h1>

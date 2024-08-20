@@ -1,0 +1,33 @@
+#nav {
+  display: flex;
+  flex-flow: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: black;
+  border-radius: 9999px;
+
+  padding: 0.25rem;
+
+  .nav-button {
+    padding: 0.25rem 1.25rem;
+
+    cursor: pointer;
+    color: white;
+    background-color: black;
+
+    border-radius: 9999px;
+
+    transition: background-color 150ms, color 150ms, transform 150ms;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
