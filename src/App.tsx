@@ -1,13 +1,12 @@
+import styles from './css/App.module.css';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 
-function App() {
+export default function App() {
   return (
-    <div>
+    <div className={styles.app}>
       <Nav />
       <Hero />
     </div>
   )
 }
-
-export default App
