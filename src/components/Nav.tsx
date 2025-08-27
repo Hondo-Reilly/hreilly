@@ -6,10 +6,10 @@ export default function Nav() {
         <div className={styles.navContainer}>
             <h1 className={styles.navTitle}>Hondo Reilly</h1>
             <div className={styles.navLinks}>
-                <a href="#">About</a>
-                <a href="#">Experience</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>

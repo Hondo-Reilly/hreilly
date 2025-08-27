@@ -6,13 +6,19 @@
   box-sizing: border-box;
 
   --border-color: #e0e0e0;
-  --app-max-width: 1200px;
+  --app-max-width: 1000px;
+
+  --app-medium-width: 640px;
 }
 
 #root {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,6 +35,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   font-weight: 600;
+  line-height: 1.25;
 }
 
 p {
@@ -40,4 +47,36 @@ p {
 a {
   text-decoration: none;
   color: #000;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+button {
+  text-decoration: none;
+  border: 2px solid black;
+  background: white;
+
+  padding: 0.5rem 1rem;
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 5px;
+  cursor: pointer;
 }
