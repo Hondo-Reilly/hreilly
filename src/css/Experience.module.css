@@ -9,6 +9,12 @@
     padding: 3rem 1rem;
 }
 
+.experienceTitle {
+    margin: 0 0 -2rem 0;
+    width: 100%;
+    max-width: 640px;
+}
+
 .autoScrollPoint {
     position: absolute;
     top: -1.5rem;
@@ -34,27 +40,14 @@
 .experienceItemContent {
     text-align: left;
     width: 100%;
-}
 
-.experienceItemHeader {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    width: 100%;
-
-    .experienceItemCompanyLogo {
-        width: 100%;
-    }
-
-    h3 {
-        font-size: 1rem;
-    }
-
-    p {
-        font-size: 1rem;
+    h2 {
+        font-size: 1.15rem;
+        line-height: 1.25;
+        padding-bottom: 0.5rem;
     }
 }
+
 .experienceItemTime {
     padding-bottom: 0.5rem;
 }
@@ -75,5 +68,16 @@
     .experienceItemHeader {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .experienceTitle {
+        width: 100%;
+        max-width: var(--app-max-width);
+    }
+
+    .experienceItemContent {
+        h2 {
+            font-size: 1.5rem;
+        }
     }
 }

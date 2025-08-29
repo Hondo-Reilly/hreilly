@@ -2,6 +2,7 @@ import styles from './css/App.module.css';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Nav />
       <Hero />
       <Experience />
+      <Projects />
     </div>
   )
 }

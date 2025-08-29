@@ -4,12 +4,13 @@ import modTechLab from '../assets/ModTechLabs.png';
 import nameDibs from '../assets/NameDibs.png';
 import snapOrder from '../assets/SnapOrder.png';
 import usConec from '../assets/USConec.png';
+import ImageGrid from './ImageGrid';
 
 export default function Experience() {
     return (
         <div className={styles.experience}>
             <div id="experience" className={styles.autoScrollPoint}></div>
-            <h1>Experience</h1>
+            <h1 className={styles.experienceTitle}>Experience</h1>
 
             <ExperienceItem 
                 title="Engineering Intern"
@@ -43,7 +44,7 @@ export default function Experience() {
                 img={modTechLab}
             />
 
-
+            <ImageGrid images={[usConec, snapOrder, nameDibs, modTechLab]} />
         </div>
     )
 }
