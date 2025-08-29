@@ -44,7 +44,6 @@ export default function Experience() {
                 img={modTechLab}
             />
 
-            <ImageGrid images={[usConec, snapOrder, nameDibs, modTechLab]} />
         </div>
     )
 }
