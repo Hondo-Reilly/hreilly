@@ -1,10 +1,8 @@
 import styles from '../css/Experience.module.css';
-import headshot from '../assets/headshot.jpeg';
 import modTechLab from '../assets/ModTechLabs.png';
 import nameDibs from '../assets/NameDibs.png';
 import snapOrder from '../assets/SnapOrder.png';
 import usConec from '../assets/USConec.png';
-import ImageGrid from './ImageGrid';
 
 export default function Experience() {
     return (
