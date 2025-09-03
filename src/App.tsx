@@ -11,6 +11,7 @@ export default function App() {
       <Hero />
       <Experience />
       <Projects />
+      <p>Test</p>
     </div>
   )
 }
