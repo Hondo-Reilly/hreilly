@@ -54,6 +54,9 @@
 
 @media (min-width: 950px) {
     .projects {
+        padding-left: 0;
+        padding-right: 0;
+
         max-width: var(--app-max-width);
 
         h2 {
