@@ -1,5 +1,9 @@
 import styles from '../css/Projects.module.css';
 import ImageGrid from './ImageGrid';
+import modTechLab from '../assets/ModTechLabs.png';
+
+import standardCad from '../assets/standardCad.png';
+import standardSuspension from '../assets/standardSuspension.png';
 
 export default function Projects() {
     return (
@@ -10,7 +14,7 @@ export default function Projects() {
             <Project
                 title="Standard Robot"
                 description="Description 1"
-                images={['/src/assets/ModTechLabs.png', '/src/assets/ModTechLabs.png', '/src/assets/ModTechLabs.png']}
+                images={[modTechLab, standardCad, standardSuspension]}
             />
             
             <Project

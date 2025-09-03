@@ -1,5 +1,6 @@
 import styles from '../css/Hero.module.css';
 import headshot from '../assets/headshot.jpeg';
+import resumePdf from '../assets/Hondo - Clean Modern Resume.pdf';
 
 export default function Hero() {
     return (
@@ -9,7 +10,7 @@ export default function Hero() {
                 <h3>Hello, I'm</h3>
                 <h1>Hondo Reilly</h1>
                 <p>I am a mechanical and manufacturing engineer studying at Texas A&M University.</p>
-                <a href="" className={styles.resumeButton}>Get my resume</a>
+                <a href={resumePdf} download="Hondo-Reilly-Resume.pdf" className={styles.resumeButton}>Get my resume</a>
             </div>
         </div>
     )
