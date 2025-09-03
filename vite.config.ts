@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/' // correct for a root domain (custom domain)
+  base: '/hreilly/' // correct for a root domain (custom domain)
 })
