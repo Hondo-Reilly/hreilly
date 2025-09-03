@@ -2,7 +2,7 @@ import styles from '../css/Experience.module.css';
 import modTechLab from '../assets/ModTechLabs.png';
 import nameDibs from '../assets/NameDibs.png';
 import snapOrder from '../assets/SnapOrder.png';
-import usConec from '../assets/USConec.png';
+import usConec from '../assets/usConec.png';
 
 export default function Experience() {
     return (
