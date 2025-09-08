@@ -15,6 +15,7 @@ export default function Contact() {
         setIsRevealed(true);
     }
 
+    /*
     function generateObfuscatedString(inputString: string) {
         const splitString = inputString.split('');
         let outputString = '';
@@ -31,6 +32,7 @@ export default function Contact() {
         console.log(`${outputString}`);
         console.log(decryptObfuscatedString(outputString));
     }
+    */
 
     function decryptObfuscatedString(inputString: string) {
         let currentIndex = 0;
