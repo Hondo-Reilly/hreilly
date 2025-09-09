@@ -34,11 +34,17 @@
     gap: 1rem;
 }
 
-.navLinks a {
+.navLinks a,
+.navLinks button {
     font-size: 0.8rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
 }
 
 @media (max-width: 640px) {
@@ -53,7 +59,8 @@
         gap: 0.5rem;
     }
 
-    .navLinks a {
+    .navLinks a,
+    .navLinks button {
         font-size: 0.8rem;
     }
 }
