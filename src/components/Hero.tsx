@@ -1,5 +1,5 @@
 import styles from '../css/Hero.module.css';
-import headshot from '../assets/headshot.jpeg';
+import headshot from '../assets/headshot.png';
 import resumePdf from '../assets/Hondo - Clean Modern Resume.pdf';
 
 export default function Hero() {
