@@ -1,9 +1,9 @@
 import styles from '../css/Projects.module.css';
 import ImageGrid from './ImageGrid';
-import modTechLab from '../assets/ModTechLabs.png';
 
 import standardCad from '../assets/standardCad.png';
 import standardSuspension from '../assets/standardSuspension.png';
+import standardReal from '../assets/standardReal.jpeg';
 
 export default function Projects() {
     return (
@@ -13,14 +13,8 @@ export default function Projects() {
 
             <Project
                 title="Standard Robot"
-                description="Description 1"
-                images={[modTechLab, standardCad, standardSuspension]}
-            />
-            
-            <Project
-                title="Smart Vending Machine"
-                description="Description 1"
-                images={['/src/assets/ModTechLabs.png', '/src/assets/ModTechLabs.png', '/src/assets/ModTechLabs.png']}
+                description="Worked on a multidisciplinary student team to design, manufacture, and assemble a Standard-class competition robot for the RoboMaster program. Led the suspension system design and collaborated with electrical and software teammates. Delivered an operational robot that competed at RoboMaster events in the United States and China."
+                images={[standardReal, standardCad, standardSuspension]}
             />
         </div>
     )
@@ -45,14 +39,6 @@ function Project({
             <h2>{title}</h2>
             <p>{description}</p>
             <ImageGrid images={images} />
-
-            {appliedSkills.length > 0 && (
-                <div className={styles.appliedSkills}>
-                    {appliedSkills.map((skill) => (
-                        <AppliedSkill key={skill.skillName} skillName={skill.skillName} color={skill.color} />
-                    ))}
-                </div>
-            )}
         </div>
     )
 }
