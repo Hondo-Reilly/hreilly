@@ -9,7 +9,11 @@ export default function Hero() {
             <div className={styles.heroContent}>
                 <h3>Hello, I'm</h3>
                 <h1>Hondo Reilly</h1>
-                <p>I am a mechanical and manufacturing engineer studying at Texas A&M University.</p>
+                <ul>
+                    <li>Texas A&M Junior studying Manufacturing and Mechanical Engineering Technology (MMET) </li>
+                    <li>Broad experience working in software startups and manufacturing.</li>
+                    <li>Energetic, fast learner with strong communication skills.</li>
+                </ul>
                 <a href={resumePdf} download="Hondo-Reilly-Resume.pdf" className={styles.resumeButton}>Get my resume</a>
             </div>
         </div>
