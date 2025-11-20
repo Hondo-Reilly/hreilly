@@ -14,7 +14,11 @@ export default function Hero() {
                     <li>Broad experience working in software startups and manufacturing.</li>
                     <li>Energetic, fast learner with strong communication skills.</li>
                 </ul>
-                <a href={resumePdf} download="Hondo-Reilly-Resume.pdf" className={styles.resumeButton}>Get my resume</a>
+                <div className={styles.buttonContainer}>
+                    <a href="#experience" className={styles.experienceButton}>See My Experience</a>
+                    <p> |</p>
+                    <a href={resumePdf} download="Hondo-Reilly-Resume.pdf" className={styles.resumeButton}>Get My Resume</a>
+                </div>
             </div>
         </div>
     )

@@ -39,9 +39,23 @@ ul {
     p, li {
         padding-bottom: 0.5rem;
     }
+
+    .buttonContainer {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: left;
+        padding-top: 0.5rem;
+        
+        p {
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0;
+        }
+    }
 }
 
-.resumeButton {
+.experienceButton, .resumeButton {
     font-size: 1rem;
     text-decoration: underline;
     font-weight: 600;
@@ -50,6 +64,10 @@ ul {
 @media (min-width: 640px) {
     .hero {
         flex-direction: row;
+        gap: 2rem;
+    }
+
+    .buttonContainer {
         gap: 2rem;
     }
 }
@@ -73,9 +91,19 @@ ul {
         p, li {
             font-size: 1.25rem;
         }
+
+        .buttonContainer {
+            gap: 1rem;
+    
+            p {
+                font-size: 1.25rem;
+            }
+        }
     }
 
-    .resumeButton {
+    .experienceButton, .resumeButton {
         font-size: 1.25rem;
     }
+
+
 }
