@@ -1,18 +1,12 @@
-import styles from './css/App.module.css';
-import Nav from './components/Nav';
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Resume from './Resume';
 
 export default function App() {
   return (
-    <div className={styles.app}>
-      <Nav />
-      <Hero />
-      <Experience />
-      <Projects />
-      <Contact />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/resume" element={<Resume />} />
+    </Routes>
   )
 }
